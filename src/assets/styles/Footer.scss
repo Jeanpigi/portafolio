@@ -1,0 +1,24 @@
+.footer{
+    display: grid;
+    justify-items: center;
+    background: var(--clr-light);
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+.footer a {
+    font-weight: var(--fw-bold);
+    color: var(--clr-dark);
+    text-decoration: none;
+}
+
+.socialList {
+    display: grid;
+    padding: 0;
+}
+
+.socialList a {
+    width: 50px;
+    grid-row-end: 3;
+    margin-right: 10px;
+}

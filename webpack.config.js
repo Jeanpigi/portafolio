@@ -33,7 +33,6 @@ module.exports = {
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
-
                     },
                     'css-loader',
                     'sass-loader'
@@ -57,6 +56,9 @@ module.exports = {
                 }
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     plugins: [
         new htmlWebpackPlugin({
