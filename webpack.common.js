@@ -1,12 +1,13 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     },
     resolve: {
         extensions: ['.js', '.jsx']
@@ -61,12 +62,14 @@ module.exports = {
         historyApiFallback: true,
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new htmlWebpackPlugin({
             template: './public/index.html',
-            filename: './index.html'
+            filename: './index.html',
+            title: 'production',
         }),
         new MiniCssExtractPlugin({
-            filename: 'assets/[name].css'
+            filename: 'assets/[name].css',
         }),
         new htmlWebpackPlugin({
             favicon: './public/favicon.ico'
